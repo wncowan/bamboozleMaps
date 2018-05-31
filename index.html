@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <title>Directions service</title>
+  </head>
+  <body>
+    <div id="floating-panel">
+        <form id="routesForm">
+            <div id="start">
+                <b>Start: </b>
+                <input class="street" type="text" placeholder="address">
+                <input class="city" type="text" placeholder="city">
+                <input class="state" type="text" placeholder="state">
+            </div>
+            <button id="addWaypointButton" type="button">Add Location</button>
+            <div id="end">
+                <b>End: </b>
+                <input class="street" type="text" placeholder="address">
+                <input class="city" type="text" placeholder="city">
+                <input class="state" type="text" placeholder="state">
+            </div>
+            <b>Mode: </b>
+            <select id="mode">
+                <option value="DRIVING">DRIVING</option>
+                <option value="WALKING">WALKING</option>
+                <option value="BICYCLING">BICYCLING</option>
+                <option value="TRANSIT">TRANSIT</option>
+            </select>
+            <button id="submitButton" type="button">Get directions</button>
+        </form>
+    </div>
+    <div id="right-panel"></div>
+    <div id="map"></div>
+
+    <template id="waypointTemplate">
+        <div class="waypoint">
+            <b>Waypoint: </b>
+            <input class="street" type="text" placeholder="address">
+            <input class="city" type="text" placeholder="city">
+            <input class="state" type="text" placeholder="state">
+        </div>
+    </template>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqTFdicKyy194Sa_dzR4hkLkJn_FCWKB8&callback=initMap">
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
